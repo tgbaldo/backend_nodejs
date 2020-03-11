@@ -1,0 +1,9 @@
+{
+  "name": "backend_nodejs",
+  "version": "1.0.0",
+  "description": "course of the backend in Node.js",
+  "main": "index.js",
+  "repository": "https://github.com/tgbaldo/backend_nodejs.git",
+  "author": "Tiago Baldo <tgbaldo@gmail.com>",
+  "license": "MIT"
+}
