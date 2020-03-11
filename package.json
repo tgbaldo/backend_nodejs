@@ -6,6 +6,9 @@
   "repository": "https://github.com/tgbaldo/backend_nodejs.git",
   "author": "Tiago Baldo <tgbaldo@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
