@@ -21,10 +21,7 @@ module.exports = {
 
     const hero = await HeroRepository.store(data);
 
-    console.log('agora vaiii');
-    console.log(hero);
-
-    return await HeroRepository.getById(hero.id);
+    return await HeroRepository.getById(hero[0].id);
   },
 
   async update(id, data) {
