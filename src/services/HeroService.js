@@ -19,12 +19,9 @@ module.exports = {
     data.created_at = new Date;
     data.updated_at = new Date;
 
-    const heroId = await HeroRepository.store(data);
+    const hero = await HeroRepository.store(data);
 
-    console.log('herooooooo');
-    console.log(heroId);
-
-    return await HeroRepository.getById(heroId);
+    return await HeroRepository.getById(hero.id);
   },
 
   async update(id, data) {
