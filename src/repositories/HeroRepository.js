@@ -13,6 +13,7 @@ module.exports = {
 
   async store(data) {
     return await db.knex('heroes')
+      .returning('id')
       .insert(data);
   },
 
