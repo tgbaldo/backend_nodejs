@@ -21,6 +21,9 @@ module.exports = {
 
     const hero = await HeroRepository.store(data);
 
+    console.log('agora vaiii');
+    console.log(hero);
+
     return await HeroRepository.getById(hero.id);
   },
 
