@@ -10,6 +10,15 @@ const controllers = '../../src/controllers';
 
 const HeroController = require(`${controllers}/HeroController`);
 
+app.get('/', (req, res, next) => {
+  res.send({
+    app: 'Hero Fintech',
+    status: 'up',
+    version: '1.0',
+    homepage: 'https://heroway.com.br'
+  });
+})
+
 app.prefix('/heroes', (router) => {
   router.route('/').get(HeroController.index);
   router.route('/:id').get(HeroController.show);
