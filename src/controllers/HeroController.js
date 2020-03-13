@@ -6,20 +6,43 @@ module.exports = {
     return res.send(heroes);
   },
 
-  async show(req, res) {
-    return res.send('show details of the hero: '+req.params.id);
+  async show(req, res, next) {
+    try {
+      return res.send(
+        await HeroService.getById(req.params.id)
+      );
+    } catch (error) {
+      next(error);
+    }
   },
 
-  async store(req, res) {
-    const hero = await HeroService.store(req.body);
-    return res.send(hero);
+  async store(req, res, next) {
+    try {
+      return res.send(
+        await HeroService.store(req.body)
+      );
+    } catch (error) {
+      next(error);
+    }
   },
 
-  async update(req, res) {
-    return res.send('update a hero: '+req.params.id);
+  async update(req, res, next) {
+    try {
+      return res.send(
+        await HeroService.update(req.params.id, req.body)
+      );
+    } catch (error) {
+      next(error);
+    }
   },
 
-  async delete(req, res) {
-    return res.send('delete a hero: '+req.params.id);
+  async delete(req, res, next) {
+    try {
+      return res.send(
+        await HeroService.delete(req.params.id)
+      );
+    } catch (error) {
+      next(error);
+    }
   }
 };
