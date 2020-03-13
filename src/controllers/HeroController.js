@@ -1,21 +1,25 @@
+const HeroService = require('../services/HeroService');
+
 module.exports = {
-  index(req, res) {
-    return res.send('list all heroes');
+  async index(req, res) {
+    const heroes = await HeroService.getAll();
+    return res.send(heroes);
   },
 
-  show(req, res) {
+  async show(req, res) {
     return res.send('show details of the hero: '+req.params.id);
   },
 
-  store(req, res) {
-    return res.send('create a hero');
+  async store(req, res) {
+    const hero = await HeroService.store(req.body);
+    return res.send(hero);
   },
 
-  update(req, res) {
+  async update(req, res) {
     return res.send('update a hero: '+req.params.id);
   },
 
-  delete(req, res) {
+  async delete(req, res) {
     return res.send('delete a hero: '+req.params.id);
   }
 };
