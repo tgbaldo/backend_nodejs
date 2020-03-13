@@ -1,3 +1,8 @@
-const config = require('./knexfile');
+const knexfile = require('./knexfile');
 
-exports.knex = require('knex')(config.development);
+let config = knexfile.development;
+if (process.env.APP_ENV == 'production') {
+  config = knexfile.production;
+}
+
+exports.knex = require('knex')(config);
