@@ -1,3 +1,3 @@
 const config = require('./knexfile');
 
-module.exports.knex = require('knex')(config.development);
+exports.knex = require('knex')(config.development);
