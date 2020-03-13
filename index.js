@@ -15,6 +15,8 @@ app.use(function(err, req, res, next) {
     message = 'internal server error';
   }
 
+  console.log(err);
+
   return res.status(statusCode).send({
     error: true,
     message: message
