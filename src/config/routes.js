@@ -8,7 +8,7 @@ express.application.prefix = express.Router.prefix = function (path, configure) 
 const app = express();
 const controllers = '../../src/controllers';
 
-const HeroController = require(`${controllers}/HeroController`);
+const CharacterController = require(`${controllers}/CharacterController`);
 
 app.get('/', (req, res, next) => {
   res.send({
@@ -19,12 +19,12 @@ app.get('/', (req, res, next) => {
   });
 })
 
-app.prefix('/heroes', (router) => {
-  router.route('/').get(HeroController.index);
-  router.route('/:id').get(HeroController.show);
-  router.route('/').post(HeroController.store);
-  router.route('/:id').put(HeroController.update);
-  router.route('/:id').delete(HeroController.delete);
+app.prefix('/characters', (router) => {
+  router.route('/').get(CharacterController.index);
+  router.route('/:id').get(CharacterController.show);
+  router.route('/').post(CharacterController.store);
+  router.route('/:id').put(CharacterController.update);
+  router.route('/:id').delete(CharacterController.delete);
 });
 
 exports.router = app;
