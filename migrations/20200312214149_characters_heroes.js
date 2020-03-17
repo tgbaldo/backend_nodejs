@@ -7,8 +7,8 @@ exports.up = function(knex) {
        table.string('type', 15).notNullable();
        table.string('avatar', 255);
        table.decimal('balance', 18, 2);
-       table.timestamps();
-    })
+       table.timestamps().notNullable();;
+    });
 };
 
 exports.down = function(knex) {

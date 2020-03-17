@@ -30,6 +30,8 @@ module.exports = {
       throw new DataNotFoundException('character not found');
     }
 
+    data.updated_at = new Date;
+
     await CharacterRepository.update(id, data);
     return await CharacterRepository.getById(id);
   },
