@@ -2,7 +2,8 @@ const db = require('../../dbconnect');
 
 module.exports = {
   async getAll() {
-    return await db.knex('characters');
+    return await db.knex('characters')
+      .orderBy('created_at', 'desc');
   },
 
   async getById(id) {
